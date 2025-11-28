@@ -4,48 +4,63 @@ import { SiJavascript, SiReact, SiNodedotjs, SiMongodb } from 'react-icons/si';
 
 const Experience = () => {
   const experiences = [
+    // Professional Experience
     {
       id: 1,
       type: 'experience',
       icon: <FaBriefcase className="text-blue-400 text-xl" />,
-      title: 'Senior MERN Stack Developer',
-      company: 'Tech Innovations Inc.',
-      duration: '2022 - Present',
-      description: 'Leading a team of developers in building scalable web applications using the MERN stack. Implemented CI/CD pipelines and cloud solutions.',
-      tags: ['React', 'Node.js', 'MongoDB', 'AWS', 'Docker'],
+      title: 'Mern Stack Developer',
+      company: 'Mactoys Software Technology',
+      duration: '02/2024 – Present',
+      location: 'Indore, India',
+      description: 'Working on various projects with a focus on full-stack development using the MERN stack.',
+      projects: [
+        'ERS-System: Developed the ERS (Employee Record System) with a focus on both frontend and backend, ensuring a user-friendly interface and efficient data management.',
+        'Formaxi: Focused on frontend development, including UI design and API integration, to provide a smooth and responsive user experience.',
+        'Oncotree: Contributed to the development of Oncotree, a web platform for doctors and patients. Handled both frontend and backend tasks, including UI design, API creation, and full integration.'
+      ],
+      tags: ['MongoDB', 'Express.js', 'React', 'Node.js', 'RESTful APIs', 'UI/UX Design'],
       iconColors: 'from-blue-500 to-cyan-400'
     },
     {
       id: 2,
       type: 'experience',
-      icon: <FaLaptopCode className="text-purple-400 text-xl" />,
-      title: 'Frontend Developer',
-      company: 'Digital Creations',
-      duration: '2020 - 2022',
-      description: 'Developed responsive user interfaces and implemented state management solutions. Collaborated with UX/UI designers to create intuitive user experiences.',
-      tags: ['React', 'Redux', 'TypeScript', 'Material-UI'],
+      icon: <FaBriefcase className="text-purple-400 text-xl" />,
+      title: 'Mern Stack Intern',
+      company: 'Dwellfox Private Limited',
+      duration: '09/2023 – 01/2024',
+      location: 'Indore, India',
+      description: 'Gained hands-on experience in full-stack development through various projects.',
+      projects: [
+        'Knock the builder: Worked as a fullstack developer, handling both frontend and backend development. Designed and integrated responsive frontend interfaces. Developed and implemented RESTful backend APIs.',
+        'Salem Ag Dubai: Developed a chat application focused on real-time communication. Worked on both the frontend design and backend development, including API integration and creation.'
+      ],
+      tags: ['MongoDB', 'Express.js', 'React', 'Node.js', 'WebSockets', 'REST APIs'],
       iconColors: 'from-purple-500 to-pink-400'
     },
+    // Education
     {
       id: 3,
       type: 'education',
       icon: <FaGraduationCap className="text-green-400 text-xl" />,
-      title: 'Master of Computer Applications (MCA)',
-      company: 'Tech University',
-      duration: '2018 - 2020',
-      description: 'Specialized in Web Technologies and Software Development. Graduated with honors.',
-      tags: ['Web Development', 'Algorithms', 'Database Systems'],
+      title: 'Bachelor of Technology (BTech CSE)',
+      company: 'ShivajiRao Kadam Institute Of Technology and Management',
+      duration: '08/2020 – 05/2024',
+      location: 'Indore, India',
+      description: 'Pursuing a degree in Computer Science and Engineering with a focus on software development and web technologies.',
+      tags: ['Computer Science', 'Data Structures', 'Algorithms', 'Web Development'],
       iconColors: 'from-green-500 to-emerald-400'
     },
     {
       id: 4,
-      type: 'certification',
-      icon: <FaCertificate className="text-yellow-400 text-xl" />,
-      title: 'AWS Certified Developer',
-      company: 'Amazon Web Services',
-      duration: '2021',
-      description: 'Certified in developing and maintaining applications on the AWS platform.',
-      tags: ['AWS', 'Cloud Computing', 'Serverless'],
+      type: 'education',
+      icon: <FaGraduationCap className="text-yellow-400 text-xl" />,
+      title: 'Higher Secondary Education',
+      company: 'Excellence Bal Vinay Mandir',
+      duration: '04/2019 – 03/2020',
+      location: 'Indore, India',
+      description: 'Completed higher secondary education with a focus on science and mathematics.',
+      tags: ['Science', 'Mathematics', 'Physics', 'Chemistry'],
       iconColors: 'from-yellow-500 to-amber-400'
     }
   ];
@@ -142,7 +157,19 @@ const Experience = () => {
                       </div>
                     </div>
                     <p className="text-gray-300 mb-4">{item.description}</p>
-                    <div className="flex flex-wrap gap-2">
+                    {item.projects && item.projects.length > 0 && (
+                      <div className="mt-6 space-y-4">
+                        <h4 className="text-sm font-medium text-cyan-400">Key Projects:</h4>
+                        <ul className="space-y-3 list-disc list-inside">
+                          {item.projects.map((project, idx) => (
+                            <li key={idx} className="text-gray-300 text-sm">
+                              {project}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+                    <div className="flex flex-wrap gap-2 mt-6">
                       {item.tags.map((tag, i) => (
                         <span 
                           key={i}
